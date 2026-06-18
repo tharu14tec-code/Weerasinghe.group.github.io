@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weerasinghe Enterprises V6 - Home</title>
+    <style>
+        :root {
+            --bg: #0b0f19;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.08);
+            --accent: #00ffaa;
+            --text: #ffffff;
+            --text-dim: #8a99ad;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: system-ui, -apple-system, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* ==========================================================================
+           HEADER NAVIGATION
+           ========================================================================== */
+        .v6-nav {
+            background: rgba(11, 15, 25, 0.8);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(12px);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+        }
+
+        .logo span { color: var(--accent); }
+
+        .nav-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent);
+        }
+
+        /* ==========================================================================
+           HERO SECTION
+           ========================================================================== */
+        .main-container {
+            flex: 1;
+            max-width: 1100px;
+            width: 100%;
+            margin: 40px auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .hero-panel {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
+            border: 1px solid var(--border);
+            border-radius: 32px;
+            padding: 40px;
+            text-align: center;
+            backdrop-filter: blur(16px);
+            margin-bottom: 30px;
+        }
+
+        .hero-panel h1 {
+            font-size: 2.5rem;
+            margin: 0 0 15px 0;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-panel p {
+            color: var(--text-dim);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 25px auto;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: #000;
+            border: none;
+            padding: 16px 32px;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 16px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+
+        .btn:hover { opacity: 0.9; }
+        .btn:active { transform: scale(0.98); }
+
+        /* ==========================================================================
+           SERVICES GRID (SPARE PARTS & REPAIRS)
+           ========================================================================== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .services-grid { grid-template-columns: 1fr; }
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 30px;
+            backdrop-filter: blur(16px);
+            transition: border-color 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: rgba(0, 255, 170, 0.3);
+        }
+
+        .service-card h2 {
+            margin: 0 0 15px 0;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .icon {
+            color: var(--accent);
+            font-size: 1.6rem;
+        }
+
+        .service-card ul {
+            margin: 0;
+            padding: 0 0 0 20px;
+            color: var(--text-dim);
+            line-height: 1.8;
+        }
+
+        /* ==========================================================================
+           FOOTER
+           ========================================================================== */
+        .v6-footer {
+            background: rgba(255, 255, 255, 0.01);
+            border-top: 1px solid var(--border);
+            backdrop-filter: blur(12px);
+            padding: 40px 20px;
+            color: var(--text-dim);
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-section h3 {
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-section p {
+            margin: 6px 0;
+            font-size: 0.95rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP NAVIGATION BAR -->
+    <nav class="v6-nav">
+        <div class="logo">WEERASINGHE <span>V6</span></div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="intake.html">Smart Intake</a>
+            <a href="about.html">About</a>
+        </div>
+    </nav>
+
+    <!-- MAIN HOMEPAGE CONTENT -->
+    <div class="main-container">
+        
+        <!-- HERO HEADLINE PANEL -->
+        <div class="hero-panel">
+            <h1>Next-Gen Workshop Solutions</h1>
+            <p>Weerasinghe Enterprises PVT LTD සතු අතිනවීන මෝටර් රථ තාක්ෂණික සහ බර වාහන අලුත්වැඩියා සේවා පියස. NVQ Level 4 සහතිකලත් ඉංජිනේරු නිපුනත්වය.</p>
+            <a href="intake.html" class="btn">LAUNCH SMART INTAKE SYSTEM ──►</a>
+        </div>
+
+        <!-- TWO MAIN CORE SERVICES DIVISION -->
+        <div class="services-grid">
+            
+            <!-- COLUMN 1: MECHANICAL REPAIRS -->
+            <div class="service-card">
+                <h2><span class="icon">🔧</span> Automotive Engineering</h2>
+                <p style="color: var(--text-dim); margin-bottom: 15px;">ඕනෑම බර වාහනයක සහ සැහැල්ලු වාහනයක යාන්ත්‍රික දෝෂ පරික්ෂාව සහ අලුත්වැඩියාව:</p>
+                <ul>
+                    <li>Isuzu 4HF1 / 4HG1 Complete Engine Overhauls</li>
+                    <li>Mahindra Bolero Suspension & Death Wobble Calibration</li>
+                    <li>Nissan Vanette Complete Braking System Restorations</li>
+                    <li>Common-Rail & Mechanical Fuel Injection Testing</li>
+                    <li>Precision Front Wheel Laser Tracking & Alignment</li>
+                </ul>
+            </div>
+
+            <!-- COLUMN 2: SPARE PARTS -->
+            <div class="service-card">
+                <h2><span class="icon">⚙️</span> Genuine Spare Parts</h2>
+                <p style="color: var(--text-dim); margin-bottom: 15px;">ඉහළම ප්‍රමිතියෙන් යුත් අව්‍යාජ අමතර කොටස් සෘජුවම අපගේ ගබඩාවන්ගෙන් ලබාගැනීමේ හැකියාව:</p>
+                <ul>
+                    <li>Genuine Engine Liner Kits & Piston Assemblies</li>
+                    <li>Full Overhaul Gasket & Seal Components</li>
+                    <li>Heavy-Duty Tie Rod Ends & Suspension Bushings</li>
+                    <li>Premium Brake Pad Sets & Brake Calipers</li>
+                    <li>Direct Stock Queries from Kurunegala & Colombo Hubs</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- MASTER FOOTER SYSTEM -->
+    <footer class="v6-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>WEERASINGHE ENTERPRISES</h3>
+                <p>Automotive Engineering, Machinery Fleet Spares & Heavy Transport Logistics Operations.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Our Network Hubs</h3>
+                <p>📍 Kurunegala - Head Workshop & Stores</p>
+                <p>📍 Colombo - Regional Distribution Yard</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Weerasinghe Enterprises (PVT) LTD. Engineered to Excellence.
+        </div>
+    </footer>
+
+</body>
+</html>
